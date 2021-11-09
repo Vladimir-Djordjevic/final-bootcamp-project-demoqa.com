@@ -2,7 +2,7 @@ package test;
 
 import static org.testng.Assert.assertEquals;
 
-import org.openqa.selenium.By;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 

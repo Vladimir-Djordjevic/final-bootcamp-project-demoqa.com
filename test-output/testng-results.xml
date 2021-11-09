@@ -2,32 +2,32 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-11-09T16:11:01 CET" name="Default suite" finished-at="2021-11-09T16:11:05 CET" duration-ms="4087">
+  <suite started-at="2021-11-09T16:13:33 CET" name="Default suite" finished-at="2021-11-09T16:13:38 CET" duration-ms="4092">
     <groups>
     </groups>
-    <test started-at="2021-11-09T16:11:01 CET" name="Default test" finished-at="2021-11-09T16:11:05 CET" duration-ms="4087">
+    <test started-at="2021-11-09T16:13:33 CET" name="Default test" finished-at="2021-11-09T16:13:38 CET" duration-ms="4092">
       <class name="test.TestRadioButtonPage">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:01 CET" name="setUp" finished-at="2021-11-09T16:11:02 CET" duration-ms="1388" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:34 CET" name="setUp" finished-at="2021-11-09T16:13:35 CET" duration-ms="1432" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUpPage()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:02 CET" name="setUpPage" finished-at="2021-11-09T16:11:04 CET" duration-ms="1898" status="PASS">
+        <test-method is-config="true" signature="setUpPage()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:35 CET" name="setUpPage" finished-at="2021-11-09T16:13:37 CET" duration-ms="1851" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpPage -->
-        <test-method signature="verifyElementsArePresentRadioButtonPage()[pri:10, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:04 CET" name="verifyElementsArePresentRadioButtonPage" finished-at="2021-11-09T16:11:04 CET" duration-ms="97" status="PASS">
+        <test-method signature="verifyElementsArePresentRadioButtonPage()[pri:10, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:37 CET" name="verifyElementsArePresentRadioButtonPage" finished-at="2021-11-09T16:13:37 CET" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyElementsArePresentRadioButtonPage -->
-        <test-method is-config="true" signature="setUpPage()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:04 CET" name="setUpPage" finished-at="2021-11-09T16:11:05 CET" duration-ms="413" status="PASS">
+        <test-method is-config="true" signature="setUpPage()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:37 CET" name="setUpPage" finished-at="2021-11-09T16:13:37 CET" duration-ms="345" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpPage -->
-        <test-method signature="verifyClicksOnRadioButtons()[pri:20, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:05 CET" name="verifyClicksOnRadioButtons" finished-at="2021-11-09T16:11:05 CET" duration-ms="167" status="PASS">
+        <test-method signature="verifyClicksOnRadioButtons()[pri:20, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:37 CET" name="verifyClicksOnRadioButtons" finished-at="2021-11-09T16:13:37 CET" duration-ms="224" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyClicksOnRadioButtons -->
-        <test-method is-config="true" signature="tearUp()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:11:05 CET" name="tearUp" finished-at="2021-11-09T16:11:05 CET" duration-ms="101" status="PASS">
+        <test-method is-config="true" signature="tearUp()[pri:0, instance:test.TestRadioButtonPage@be64738]" started-at="2021-11-09T16:13:37 CET" name="tearUp" finished-at="2021-11-09T16:13:38 CET" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearUp -->
