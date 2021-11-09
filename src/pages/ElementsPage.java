@@ -13,6 +13,7 @@ public class ElementsPage {
 	WebElement elementsHeader;
 	WebElement textBox;
 	WebElement checkBox;
+	WebElement radioButton;
 	List<WebElement> listaTabovaElements;
 
 	public ElementsPage(WebDriver driver, WebDriverWait wdwait) {
@@ -50,5 +51,15 @@ public class ElementsPage {
 	public void clickCheckBox() {
 		this.getCheckBox().click();
 	}
+
+	public WebElement getRadioButton() {
+		listaTabovaElements = driver.findElements(By.cssSelector(".btn.btn-light "));
+		return listaTabovaElements.get(2);
+	}
+	
+	public void clickRadioButton() {
+		this.getRadioButton().click();
+	}
+	
 
 }

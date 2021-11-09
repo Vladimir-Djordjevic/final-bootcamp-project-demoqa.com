@@ -2,6 +2,8 @@ package base;
 
 import java.io.IOException;
 
+import javax.swing.plaf.basic.BasicBorders.RadioButtonBorder;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +19,7 @@ import pages.ElementsPage;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.InteractionsPage;
+import pages.RadioButtonPage;
 import pages.TextBoxPage;
 import pages.TrainingPage;
 import pages.WidgetsPage;
@@ -39,6 +42,7 @@ public class BaseClass {
 	protected BrowserWindowsPage browserWindowsPage;
 	protected AlertsPage alertsPage;
 	protected CheckBoxPage checkBoxPage;
+	protected RadioButtonPage radioButtonPage;
 
 	@BeforeClass
 	public void setUp() throws IOException {
@@ -59,6 +63,7 @@ public class BaseClass {
 		browserWindowsPage = new BrowserWindowsPage(driver, wdwait);
 		alertsPage = new AlertsPage(driver, wdwait);
 		checkBoxPage = new CheckBoxPage(driver, wdwait);
+		radioButtonPage = new RadioButtonPage(driver, wdwait);
 
 	}
 

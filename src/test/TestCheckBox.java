@@ -20,7 +20,6 @@ public class TestCheckBox extends BaseClass {
 
 	@Test(priority = 10)
 	public void verifyHeaderCheckBox() {
-		assertEquals(checkBoxPage.textBoxMainHeader(), excelReader.getStringData("Test", 54, 2));
-		System.out.println();
+		
 	}
 }
