@@ -3,13 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.TestRadioButtonPage">
+      <class name="test.TestHomePage">
         <methods>
           <include name="setUp"/>
-          <include name="verifyClicksOnRadioButtons"/>
+          <include name="verifyFooterOfTheSite"/>
+          <include name="deleteCookies"/>
           <include name="setUpPage"/>
+          <include name="tearUp"/>
         </methods>
-      </class> <!-- test.TestRadioButtonPage -->
+      </class> <!-- test.TestHomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

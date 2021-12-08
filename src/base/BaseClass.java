@@ -2,8 +2,6 @@ package base;
 
 import java.io.IOException;
 
-
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -26,6 +24,25 @@ import pages.WidgetsPage;
 
 public class BaseClass {
 
+	/*
+	 * Uvod: Tokom testiranja koristim EclipseIDE, u kome su ubacene Selenium i
+	 * ostale bibljioteke, koje su potrebne da bi se testiranje izvrsilo. Tokom
+	 * testiranja koristim POM zato sto olaksava oraganizovanje i odrzavanje
+	 * koda.Elemente definisem na jednom mestu (na stranicama za testiranje) koje
+	 * kasnije koristim da bih testirao aplikaciju u test clasama. Koristim TesNG
+	 * kako bih koristio anotacije: Before Class , After Calss , Before Method,
+	 * After Method i Test. Na ovaj nacin se ne ponavalja kod i lakse se vrsi
+	 * testiranje. Da bih lakse radio Assert testove i izbegao "Hardkodiranje"
+	 * koristim DataDrivenTesting (ApachePoi).Tako se direkno iz Excel tabele unose
+	 * podaci koji su mi potrebni za testiranje. Testiranje trenutno izvrsavam na
+	 * Chrome browseru jer trenutno ga koristi najvise korisnika Ako bude potrebe da
+	 * se testira i na drugim browserima, treba ucitati i ubaciti u directory
+	 * driver. Na primer gecko driver za Firefox.
+	 */
+
+	// U base clasi cu deklarisati driver ,webdriver i sve stranice koje cu dalje da
+	// testiram.
+
 	protected WebDriver driver;
 	protected WebDriverWait wdwait;
 	protected String homeUrl;
@@ -44,6 +61,8 @@ public class BaseClass {
 	protected CheckBoxPage checkBoxPage;
 	protected RadioButtonPage radioButtonPage;
 
+	// Ovaj deo koda se izvrsava samo jednom na pocetku testiranja @BeforeClass
+	// anotacija
 	@BeforeClass
 	public void setUp() throws IOException {
 		System.setProperty("webdriver.chrome.driver", "driver-lib\\chromedriver.exe");
@@ -67,6 +86,7 @@ public class BaseClass {
 
 	}
 
+	// Na kraju testiranja zatvori i ugasi driver
 	@AfterClass
 	public void tearUp() {
 		driver.close();
