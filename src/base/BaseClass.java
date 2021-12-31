@@ -12,7 +12,6 @@ import pages.AlertsFramePage;
 import pages.AlertsPage;
 import pages.BookStorePage;
 import pages.BrowserWindowsPage;
-import pages.CheckBoxPage;
 import pages.ElementsPage;
 import pages.FormsPage;
 import pages.HomePage;
@@ -30,7 +29,7 @@ public class BaseClass {
 	 * testiranja koristim POM zato sto olaksava oraganizovanje i odrzavanje
 	 * koda.Elemente definisem na jednom mestu (na stranicama za testiranje) koje
 	 * kasnije koristim da bih testirao aplikaciju u test clasama. Koristim TesNG
-	 * kako bih koristio anotacije: Before Class , After Calss , Before Method,
+	 * kako bih koristio anotacije: Before Class , After Class , Before Method,
 	 * After Method i Test. Na ovaj nacin se ne ponavalja kod i lakse se vrsi
 	 * testiranje. Da bih lakse radio Assert testove i izbegao "Hardkodiranje"
 	 * koristim DataDrivenTesting (ApachePoi).Tako se direkno iz Excel tabele unose
@@ -58,7 +57,6 @@ public class BaseClass {
 	protected BookStorePage bookStorePage;
 	protected BrowserWindowsPage browserWindowsPage;
 	protected AlertsPage alertsPage;
-	protected CheckBoxPage checkBoxPage;
 	protected RadioButtonPage radioButtonPage;
 
 	// Ovaj deo koda se izvrsava samo jednom na pocetku testiranja @BeforeClass
@@ -81,7 +79,6 @@ public class BaseClass {
 		bookStorePage = new BookStorePage(driver, wdwait);
 		browserWindowsPage = new BrowserWindowsPage(driver, wdwait);
 		alertsPage = new AlertsPage(driver, wdwait);
-		checkBoxPage = new CheckBoxPage(driver, wdwait);
 		radioButtonPage = new RadioButtonPage(driver, wdwait);
 
 	}

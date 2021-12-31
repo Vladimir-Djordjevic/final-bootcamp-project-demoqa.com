@@ -3,15 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.TestHomePage">
+      <class name="test.TestBrowserWindows">
         <methods>
-          <include name="setUp"/>
-          <include name="verifyFooterOfTheSite"/>
           <include name="deleteCookies"/>
           <include name="setUpPage"/>
-          <include name="tearUp"/>
+          <include name="setUp"/>
+          <include name="verifyClickOnNewWindowMessageButton"/>
         </methods>
-      </class> <!-- test.TestHomePage -->
+      </class> <!-- test.TestBrowserWindows -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

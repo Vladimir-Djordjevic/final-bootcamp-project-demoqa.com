@@ -12,17 +12,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 	WebDriver driver;
 	WebDriverWait wdwait;
-//	WebElement header;
-//	WebElement elementsTab;
-//	WebElement footer;
-//	WebElement joinNowButton;
-//	WebElement formsTab;
-//	WebElement alertsFrameTab;
-//	WebElement widgetsTab;
-//	WebElement interactionsTab;
-//	WebElement bookStoreTab;
+	WebElement header;
+	WebElement elementsTab;
+	WebElement footer;
+	WebElement joinNowButton;
+	WebElement formsTab;
+	WebElement alertsFrameTab;
+	WebElement widgetsTab;
+	WebElement interactionsTab;
+	WebElement bookStoreTab;
 
-	ArrayList<String> listOfWindows; // create array list so we can switch to new windows
+	ArrayList<String> listOfWindows; // declare array list of windows so we can switch to new windows
 	List<WebElement> listaTabova;
 
 	public HomePage(WebDriver driver, WebDriverWait wdwait) {
@@ -107,7 +107,7 @@ public class HomePage {
 
 	public WebElement getBookStoreTab() {
 		List<WebElement> listaTabova = driver.findElements(By.cssSelector(".card.mt-4.top-card"));
-		// This will scroll the page till the element is found
+		// This will scroll the page till an element is found
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView();", listaTabova.get(5));
 		return listaTabova.get(5);
@@ -119,6 +119,7 @@ public class HomePage {
 		this.getBookStoreTab().click();
 	}
 
+	// Initialize list of windows and switch to second one
 	public void nextWindow() {
 		listOfWindows = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(listOfWindows.get(1));

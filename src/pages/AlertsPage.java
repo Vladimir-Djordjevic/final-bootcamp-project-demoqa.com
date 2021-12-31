@@ -15,7 +15,7 @@ public class AlertsPage {
 	WebElement buttonTimerAlert;
 	WebElement buttonConfirmBoxAlert;
 	WebElement buttonPromptAlert;
-	Alert alert;
+	Alert alert; 
 	WebElement alertResult;
 	WebElement promptResult;
 
@@ -65,7 +65,7 @@ public class AlertsPage {
 		this.getButtonPromptAlert().click();
 	}
 
-	public Alert alertPop() {
+	public Alert alertPop() { // Switch to alert window when appears
 		wdwait.until(ExpectedConditions.alertIsPresent());
 		return this.driver.switchTo().alert();
 	}
@@ -81,9 +81,9 @@ public class AlertsPage {
 	public WebElement getPromptResult() {
 		return driver.findElement(By.id("promptResult"));
 	}
+
 	public String textPromptResult() {
 		return this.getPromptResult().getText();
 	}
-	
 
 }

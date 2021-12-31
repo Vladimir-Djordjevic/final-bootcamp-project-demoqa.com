@@ -2,7 +2,7 @@ package test;
 
 import static org.testng.Assert.assertEquals;
 
-
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,7 +26,7 @@ public class TestRadioButtonPage extends BaseClass {
 		String radioButtonYes = excelReader.getStringData("Test", 57, 2);
 		String radioButtonImpressive = excelReader.getStringData("Test", 58, 2);
 		String radioButtonNo = excelReader.getStringData("Test", 59, 2);
-
+		// Assert that all elements of the page are present
 		assertEquals(radioButtonPage.textHeaderRadio(), headerRadioButton);
 		assertEquals(radioButtonPage.question(), question);
 		assertEquals(radioButtonPage.textRadioButtonYes(), radioButtonYes);
@@ -39,11 +39,10 @@ public class TestRadioButtonPage extends BaseClass {
 	public void verifyClicksOnRadioButtons() {
 		String textWhenRadioButtonYes = excelReader.getStringData("Test", 61, 2);
 		String textWhenRadioButtonImpressive = excelReader.getStringData("Test", 63, 2);
-		// Verify if text appear "You have selected Yes" when click on "Yes" radio
-		// button
+		// Verify if text appears "You have selected Yes" when user click on "Yes" radio
 		radioButtonPage.clickYesRadioButton();
 		assertEquals(radioButtonPage.textWhenSelectedRadioButton(), textWhenRadioButtonYes);
-		// Verify if text appear "You have selected Impressive" when click on
+		// Verify if text appears "You have selected Impressive" when user clicks on
 		// "Impressive" radio button
 		radioButtonPage.clickImpressiveRadioButton();
 		assertEquals(radioButtonPage.textWhenSelectedRadioButton(), textWhenRadioButtonImpressive);
@@ -52,6 +51,11 @@ public class TestRadioButtonPage extends BaseClass {
 		radioButtonPage.clickNoRadioButton();
 		assertEquals(radioButtonPage.textWhenSelectedRadioButton(), textWhenRadioButtonImpressive);
 
+	}
+
+	@AfterMethod
+	public void deleteCookies() {
+		driver.manage().deleteAllCookies();
 	}
 
 }

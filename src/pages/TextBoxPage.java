@@ -14,10 +14,10 @@ public class TextBoxPage {
 	WebElement currentAddressField;
 	WebElement permanentAddressField;
 	WebElement submitButtonTextBox;
-	WebElement fullNameResult; // id:name
-	WebElement emailResult; // id: "email"
-	WebElement currentAddressResult; // //p[@id='currentAddress']
-	WebElement permanentAddressResult; // //p[@id='permanentAddress']
+	WebElement fullNameResult; 
+	WebElement emailResult; 
+	WebElement currentAddressResult; 
+	WebElement permanentAddressResult; 
 	WebElement allResultsTextBox;
 	WebElement fieldError;
 

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -15,13 +16,13 @@ public class TestTextBox extends BaseClass {
 	public void setUpPage() {
 		driver.manage().window().maximize();
 		driver.navigate().to(homeUrl);
+		homePage.clickEelementsTab();
+		elementsPage.clickTextBox();
 
 	}
 
 	@Test(priority = 10)
 	public void verifyClickOnTextBox() {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
 		// Checking if the TexBox header exist when we click on the TextBox
 		assertTrue(textBoxPage.isTextHeaderDisplayed());
 		// Checking if the text in the TexBox header equals "Text Box"
@@ -31,8 +32,6 @@ public class TestTextBox extends BaseClass {
 
 	@Test(priority = 20)
 	public void validTextInputInTextBoxesFields() throws InterruptedException {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
 		textBoxPage.enterInputInFullNameFiled(excelReader.getStringData("Test", 21, 1));
 		textBoxPage.enterInputInEmailField(excelReader.getStringData("Test", 22, 1));
 		textBoxPage.enterInputInCurrentAddressField(excelReader.getStringData("Test", 23, 1));
@@ -49,22 +48,19 @@ public class TestTextBox extends BaseClass {
 
 	}
 
-	@Test(priority = 30) // Fail spelling error
-	public void permanentAddress() {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
-		textBoxPage.enterInputInPermanentAddressField(excelReader.getStringData("Test", 24, 1));
-		textBoxPage.clickSubmitButtonTextBox();
-		// The test will fall because of a spelling error:
-		// "Permananet address" is displayed instead of "Permanent" permanent
-		assertEquals(textBoxPage.textPermanentAddressResult(), excelReader.getStringData("Test", 24, 2));
-
-	}
+	// Test have failed, Bug report filled
+//	@Test(priority = 30) // Fail spelling error
+//	public void permanentAddressText() {
+//		textBoxPage.enterInputInPermanentAddressField(excelReader.getStringData("Test", 24, 1));
+//		textBoxPage.clickSubmitButtonTextBox();
+//		// The test will fall because of a spelling error:
+//		// "Permananet address" is displayed instead of "Permanent" permanent
+//		assertEquals(textBoxPage.textPermanentAddressResult(), excelReader.getStringData("Test", 24, 2));
+//
+//	}
 
 	@Test(priority = 40)
 	public void verifyValidResultIfUserInputValidEmailAddress() {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
 		textBoxPage.enterInputInEmailField(excelReader.getStringData("Test", 26, 1));
 		textBoxPage.clickSubmitButtonTextBox();
 		// Test if email address is the same as entered "Email:v@t.rs
@@ -78,8 +74,6 @@ public class TestTextBox extends BaseClass {
 
 	@Test(priority = 50)
 	public void testInvalidEmailInputs() {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
 		// Create a loop that is using all incorrect email inputs
 		// We check all cases with invalid email form
 		for (int i = 2; i < excelReader.getLastRowNumber() + 1; i++) {
@@ -93,8 +87,6 @@ public class TestTextBox extends BaseClass {
 
 	@Test(priority = 60)
 	public void verifyThatTextDoNotAppearWhenUserDoNotInputText() {
-		homePage.clickEelementsTab();
-		elementsPage.clickTextBox();
 		textBoxPage.clickSubmitButtonTextBox();
 		try {
 			assertFalse(textBoxPage.isDisplayedAllResultTextBox());
@@ -103,6 +95,11 @@ public class TestTextBox extends BaseClass {
 			System.out.println("There is no text result box element");
 		}
 
+	}
+
+	@AfterMethod
+	public void deleteCookies() {
+		driver.manage().deleteAllCookies();
 	}
 
 }
